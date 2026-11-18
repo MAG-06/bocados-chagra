@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Bocados de la Chagra: torticas de yuca y plátano maduro inspiradas en la región Amazónica. Desarma el producto en 3D y conoce sus ingredientes.">
+<meta name="theme-color" content="#f6f0e2">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta property="og:title" content="Bocados de la Chagra">
+<meta property="og:description" content="De la tierra y los cultivos de la Amazonía a pequeños bocados para compartir. Desármala en 3D.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<title>Bocados de la Chagra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="modulepreload" href="vendor/three/three.module.min.js">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+<div id="loader"><div><div class="spin"></div><p>Preparando la tortica…</p></div></div>
+
+<!-- hojas de fondo (ilustración sencilla, sin símbolos tradicionales) -->
+<svg id="bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <path id="hoja" d="M0,0 C60,-70 190,-80 260,0 C190,80 60,70 0,0 Z"/>
+  </defs>
+  <g fill="#9dbb7d" opacity=".35">
+    <use href="#hoja" transform="translate(-40,820) rotate(-35) scale(1.6)"/>
+    <use href="#hoja" transform="translate(60,900) rotate(-70) scale(1.2)"/>
+    <use href="#hoja" transform="translate(1480,60) rotate(150) scale(1.7)"/>
+    <use href="#hoja" transform="translate(1440,190) rotate(185) scale(1.1)"/>
+  </g>
+  <g fill="none" stroke="#7f9e63" stroke-width="2" opacity=".35">
+    <path d="M-40,820 l330,-230"/><path d="M1480,60 l-350,200"/>
+  </g>
+</svg>
+
+<canvas id="c"></canvas>
+<div id="labels"></div>
+
+<header class="brand">
+  <div class="logo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16Z" fill="#f2d38a"/><path d="M4 20 15 9" stroke="#2f4f2a" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </div>
+  <div><b>Bocados de la Chagra</b><small>Región Amazónica · Ing. Software</small></div>
+</header>
+
+<aside class="panel" id="panel">
+  <button class="handle" id="handle" aria-label="Mostrar u ocultar información"><i></i><span id="handleTxt">Desliza hacia arriba para ver más</span></button>
+  <div class="chips" id="chips"></div>
+  <h1>De la tierra y los cultivos de la Amazonía a <em>pequeños bocados</em> para compartir.</h1>
+  <div class="card" id="card"></div>
+</aside>
+
+<nav class="ings">
+  <h3>Qué lleva</h3>
+  <ol id="list"></ol>
+  <div class="leyenda">
+    <div><i style="background:#5b8a43"></i>De la chagra</div>
+    <div><i style="background:#8a5a33"></i>Aporte del grupo</div>
+    <div><i style="background:#d9a62e"></i>Para cocinar</div>
+  </div>
+</nav>
+
+<div class="hint" id="hint">Arrastra para girar · usa la rueda del mouse para desarmar · toca un ingrediente</div>
+<div class="controls">
+  <button id="toggle" class="pulse">Desarmar</button>
+  <label class="range"><span>Armada</span><input id="slider" type="range" min="0" max="1000" value="0" aria-label="Nivel de desarmado"><span>Desarmada</span></label>
+</div>
+
+</body>
+</html>
